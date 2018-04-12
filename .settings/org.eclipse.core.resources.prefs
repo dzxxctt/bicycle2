@@ -1,0 +1,13 @@
+eclipse.preferences.version=1
+encoding//src/bicycle/app/dao/UserDao.java=UTF-8
+encoding//src/bicycle/app/service/UserService.java=UTF-8
+encoding//src/bicycle/app/service/impl/UserServiceImpl.java=UTF-8
+encoding//src/bicycle/app/web/action/AppAction.java=UTF-8
+encoding//src/bicycle/base/BaseAction.java=UTF-8
+encoding//src/bicycle/base/LoginInterceptor.java=UTF-8
+encoding//src/bicycle/utils/BaiDuUtil.java=UTF-8
+encoding//src/bicycle/utils/HttpUtil.java=UTF-8
+encoding//src/bicycle/utils/PageBean.java=UTF-8
+encoding//src/bicycle/utils/SecurityCode.java=UTF-8
+encoding//src/bicycle/utils/SecurityImage.java=UTF-8
+encoding//src/bicycle/website/web/action/WebsiteAction.java=UTF-8

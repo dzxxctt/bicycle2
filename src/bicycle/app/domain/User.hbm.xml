@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+	<class name="bicycle.app.domain.User" table="t_user">
+		<id name="userId">
+			<generator class="uuid"></generator>
+		</id>
+		<property name="telphone"></property>
+		<property name="password"></property>
+		<property name="type"></property>
+		<property name="startTime">
+		</property>
+		<property name="endTime">
+		</property>
+		<property name="cost" type="int"></property>
+		<property name="bluetoothId"></property>
+		<property name="userStatus"></property>
+	</class>
+	
+</hibernate-mapping>

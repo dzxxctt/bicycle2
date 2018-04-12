@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
+    "http://struts.apache.org/dtds/struts-2.3.dtd">
+<struts>
+	<package name="Website" namespace="/" extends="common">
+	
+		<!-- 需要进行权限控制的页面访问 -->
+		<interceptors>
+			<!-- 注册拦截器 -->
+			<interceptor name="LoginInterceptor"
+				class="bicycle.base.LoginInterceptor">
+				<param name="excludeMethods">login,valideCode,updatePasswordUI</param>
+			</interceptor>
+			<!-- 拦截器栈 -->
+			<interceptor-stack name="myStack">
+				<interceptor-ref name="LoginInterceptor" />
+				<interceptor-ref name="defaultStack" />
+			</interceptor-stack>
+		</interceptors>
+		<!-- 指定拦截器栈 -->
+		<default-interceptor-ref name="myStack"></default-interceptor-ref>
+		<global-results>
+			<result name="login">/index.jsp</result>
+		</global-results>	
+	
+		<action name="WebsiteAction_*" class="bicycle.website.web.action.WebsiteAction" method="{1}">
+			<result name="home">/WEB-INF/pages/home.jsp</result>
+			<result name="login">/index.jsp</result>
+			<result name="updatePasswordUI">/WEB-INF/pages/pass.jsp</result>
+			<result name="findAllUsers">/WEB-INF/pages/userlist.jsp</result>
+			<result name="findByTelphone">/WEB-INF/pages/oneuser.jsp</result>
+			<result name="valideCode" type="stream">
+				<param name="contentType">image/jpeg</param>  
+            	<param name="inputName">imageStream</param>  
+            	<param name="bufferSize">2048</param>
+			</result>
+		</action>
+		<action name="BikeAction_*" class="bicycle.website.web.action.BikeAction" method="{1}">
+			<result name="findAllBikes">/WEB-INF/pages/bikelist.jsp</result>
+			<result name="findByBluetoothId">/WEB-INF/pages/onebike.jsp</result>
+			<result name="mapUI">/WEB-INF/pages/baidudemo.jsp</result>
+		</action>
+	</package>
+	
+</struts>
